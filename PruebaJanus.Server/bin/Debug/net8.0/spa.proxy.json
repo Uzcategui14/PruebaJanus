@@ -1,0 +1,10 @@
+{
+"SpaProxyServer": {
+"ServerUrl": "https://localhost:56329",
+"RedirectUrl": "",
+"LaunchCommand": "npm run dev",
+"WorkingDirectory": "C:\\Users\\User\\Desktop\\PruebaJanus\\PruebaJanus\\PruebaJanus.Server\\..\\pruebajanus.client",
+"MaxTimeoutInSeconds": "120",
+"KeepRunning": "false"
+}
+}

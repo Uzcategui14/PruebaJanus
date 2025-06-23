@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "Nuevo perfil",
+    "Projects": [
+      {
+        "Path": "PruebaJanus.Server\\PruebaJanus.Server.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "pruebajanus.client\\pruebajanus.client.esproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

@@ -1,0 +1,6 @@
+@PruebaJanus.Server_HostAddress = http://localhost:5095
+
+GET {{PruebaJanus.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

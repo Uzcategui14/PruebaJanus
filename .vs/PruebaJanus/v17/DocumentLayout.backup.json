@@ -1,0 +1,126 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\PruebaJanus\\PruebaJanus\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B68336C7-0434-4D8A-A3D0-3EB1A9CEB96A}|PruebaJanus.Server\\PruebaJanus.Server.csproj|c:\\users\\user\\desktop\\pruebajanus\\pruebajanus\\pruebajanus.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B68336C7-0434-4D8A-A3D0-3EB1A9CEB96A}|PruebaJanus.Server\\PruebaJanus.Server.csproj|solutionrelative:pruebajanus.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B68336C7-0434-4D8A-A3D0-3EB1A9CEB96A}|PruebaJanus.Server\\PruebaJanus.Server.csproj|c:\\users\\user\\desktop\\pruebajanus\\pruebajanus\\pruebajanus.server\\contexts\\testdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B68336C7-0434-4D8A-A3D0-3EB1A9CEB96A}|PruebaJanus.Server\\PruebaJanus.Server.csproj|solutionrelative:pruebajanus.server\\contexts\\testdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{449F8AAB-3231-D8E3-C37F-7E8CF142A51C}|pruebajanus.client\\pruebajanus.client.esproj|c:\\users\\user\\desktop\\pruebajanus\\pruebajanus\\pruebajanus.client\\vite.config.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{449F8AAB-3231-D8E3-C37F-7E8CF142A51C}|pruebajanus.client\\pruebajanus.client.esproj|solutionrelative:pruebajanus.client\\vite.config.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{449F8AAB-3231-D8E3-C37F-7E8CF142A51C}|pruebajanus.client\\pruebajanus.client.esproj|c:\\users\\user\\desktop\\pruebajanus\\pruebajanus\\pruebajanus.client\\src\\main.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{449F8AAB-3231-D8E3-C37F-7E8CF142A51C}|pruebajanus.client\\pruebajanus.client.esproj|solutionrelative:pruebajanus.client\\src\\main.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{449F8AAB-3231-D8E3-C37F-7E8CF142A51C}|pruebajanus.client\\pruebajanus.client.esproj|c:\\users\\user\\desktop\\pruebajanus\\pruebajanus\\pruebajanus.client\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{449F8AAB-3231-D8E3-C37F-7E8CF142A51C}|pruebajanus.client\\pruebajanus.client.esproj|solutionrelative:pruebajanus.client\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B68336C7-0434-4D8A-A3D0-3EB1A9CEB96A}|PruebaJanus.Server\\PruebaJanus.Server.csproj|c:\\users\\user\\desktop\\pruebajanus\\pruebajanus\\pruebajanus.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B68336C7-0434-4D8A-A3D0-3EB1A9CEB96A}|PruebaJanus.Server\\PruebaJanus.Server.csproj|solutionrelative:pruebajanus.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\PruebaJanus\\PruebaJanus\\PruebaJanus.Server\\Program.cs",
+              "RelativeDocumentMoniker": "PruebaJanus.Server\\Program.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\PruebaJanus\\PruebaJanus\\PruebaJanus.Server\\Program.cs",
+              "RelativeToolTip": "PruebaJanus.Server\\Program.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T03:34:40.889Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TestDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\PruebaJanus\\PruebaJanus\\PruebaJanus.Server\\Contexts\\TestDbContext.cs",
+              "RelativeDocumentMoniker": "PruebaJanus.Server\\Contexts\\TestDbContext.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\PruebaJanus\\PruebaJanus\\PruebaJanus.Server\\Contexts\\TestDbContext.cs",
+              "RelativeToolTip": "PruebaJanus.Server\\Contexts\\TestDbContext.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T03:34:20.157Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "vite.config.js",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\PruebaJanus\\PruebaJanus\\pruebajanus.client\\vite.config.js",
+              "RelativeDocumentMoniker": "pruebajanus.client\\vite.config.js",
+              "ToolTip": "C:\\Users\\User\\Desktop\\PruebaJanus\\PruebaJanus\\pruebajanus.client\\vite.config.js*",
+              "RelativeToolTip": "pruebajanus.client\\vite.config.js*",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAADAAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-06-23T03:33:34.534Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "main.jsx",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\PruebaJanus\\PruebaJanus\\pruebajanus.client\\src\\main.jsx",
+              "RelativeDocumentMoniker": "pruebajanus.client\\src\\main.jsx",
+              "ToolTip": "C:\\Users\\User\\Desktop\\PruebaJanus\\PruebaJanus\\pruebajanus.client\\src\\main.jsx",
+              "RelativeToolTip": "pruebajanus.client\\src\\main.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-06-23T03:30:08.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "App.jsx",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\PruebaJanus\\PruebaJanus\\pruebajanus.client\\src\\App.jsx",
+              "RelativeDocumentMoniker": "pruebajanus.client\\src\\App.jsx",
+              "ToolTip": "C:\\Users\\User\\Desktop\\PruebaJanus\\PruebaJanus\\pruebajanus.client\\src\\App.jsx",
+              "RelativeToolTip": "pruebajanus.client\\src\\App.jsx",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAowBwAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-06-23T03:29:51.543Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\PruebaJanus\\PruebaJanus\\PruebaJanus.Server\\appsettings.json",
+              "RelativeDocumentMoniker": "PruebaJanus.Server\\appsettings.json",
+              "ToolTip": "C:\\Users\\User\\Desktop\\PruebaJanus\\PruebaJanus\\PruebaJanus.Server\\appsettings.json",
+              "RelativeToolTip": "PruebaJanus.Server\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-23T03:25:35.863Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
