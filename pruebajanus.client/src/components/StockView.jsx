@@ -1,5 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import API_BASE_URL from '../config';
+import {
+    Table,
+    TableBody,
+    TableCaption,
+    TableCell,
+    TableHead,
+    TableHeader,
+    TableRow,
+} from "@/components/ui/table";
 
 const StockView = () => {
     const [stockData, setStockData] = useState([]);
@@ -29,30 +38,30 @@ const StockView = () => {
     if (error) return <div>Error: {error.message}</div>;
 
     return (
-        <div>
-            <h2>Stock de Productos (Vista)</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID Producto</th>
-                        <th>Nombre Producto</th>
-                        <th>Precio</th>
-                        <th>Tipo Producto</th>
-                        <th>Cantidad en Stock</th>
-                    </tr>
-                </thead>
-                <tbody>
+        <div className="p-6 bg-white rounded-lg shadow-md mb-8">
+            <h2 className="text-2xl font-semibold mb-6 text-center text-gray-800">Stock de Productos (Vista)</h2>
+            <Table>
+                <TableHeader>
+                    <TableRow>
+                        <TableHead className="w-[100px]">ID Producto</TableHead>
+                        <TableHead>Nombre Producto</TableHead>
+                        <TableHead>Precio</TableHead>
+                        <TableHead>Tipo Producto</TableHead>
+                        <TableHead>Cantidad en Stock</TableHead>
+                    </TableRow>
+                </TableHeader>
+                <TableBody>
                     {stockData.map((item, index) => (
-                        <tr key={index}> {/* Usar un ID único si lo hay, de lo contrario index es aceptable para listas estáticas */}
-                            <td>{item.productoId}</td>
-                            <td>{item.nombre}</td>
-                            <td>{item.precio}</td>
-                            <td>{item.tipoProducto}</td>
-                            <td>{item.cantidad}</td>
-                        </tr>
+                        <TableRow key={index}> {/* Usar un ID Ãºnico si lo hay, de lo contrario index es aceptable para listas estÃ¡ticas */}
+                            <TableCell>{item.productoId}</TableCell>
+                            <TableCell>{item.nombre}</TableCell>
+                            <TableCell>{item.precio}</TableCell>
+                            <TableCell>{item.tipoProducto}</TableCell>
+                            <TableCell>{item.cantidad}</TableCell>
+                        </TableRow>
                     ))}
-                </tbody>
-            </table>
+                </TableBody>
+            </Table>
         </div>
     );
 };

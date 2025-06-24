@@ -90,3 +90,4 @@ C:\Users\User\Desktop\PruebaJanus\PruebaJanus\PruebaJanus.Server\obj\Debug\net8.
 C:\Users\User\Desktop\PruebaJanus\PruebaJanus\PruebaJanus.Server\obj\Debug\net8.0\PruebaJanus.Server.pdb
 C:\Users\User\Desktop\PruebaJanus\PruebaJanus\PruebaJanus.Server\obj\Debug\net8.0\PruebaJanus.Server.genruntimeconfig.cache
 C:\Users\User\Desktop\PruebaJanus\PruebaJanus\PruebaJanus.Server\obj\Debug\net8.0\ref\PruebaJanus.Server.dll
+C:\Users\User\Desktop\PruebaJanus\PruebaJanus\PruebaJanus.Server\obj\Debug\net8.0\PruebaJanus.Server.sourcelink.json

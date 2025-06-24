@@ -1,9 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import API_BASE_URL from '../config';
+import { Button } from "@/components/ui/button";
+import {
+    Table,
+    TableBody,
+    TableCaption,
+    TableCell,
+    TableHead,
+    TableHeader,
+    TableRow,
+} from "@/components/ui/table";
+import { Input } from "@/components/ui/input";
 
 const ProductList = () => {
     const [products, setProducts] = useState([]);
-    const [editingProduct, setEditingProduct] = useState(null); // Producto que se está editando
+    const [editingProduct, setEditingProduct] = useState(null); // Producto que se estÃ¡ editando
     const [formData, setFormData] = useState({
         id: 0,
         nombre: '',
@@ -29,7 +40,7 @@ const ProductList = () => {
     };
 
     const handleDelete = async (id) => {
-        if (window.confirm('¿Estás seguro de que quieres eliminar este producto?')) {
+        if (window.confirm('Â¿EstÃ¡s seguro de que quieres eliminar este producto?')) {
             try {
                 const response = await fetch(`${API_BASE_URL}/Productos/${id}`, {
                     method: 'DELETE',
@@ -78,7 +89,7 @@ const ProductList = () => {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             alert('Producto actualizado exitosamente');
-            setEditingProduct(null); // Sale del modo edición
+            setEditingProduct(null); // Sale del modo ediciÃ³n
             fetchProducts(); // Refresca la lista
         } catch (error) {
             console.error("Error updating product:", error);
@@ -87,47 +98,47 @@ const ProductList = () => {
     };
 
     return (
-        <div>
-            <h2>Lista de Productos</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Precio</th>
-                        <th>Tipo Producto ID</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
+        <div className="p-6 bg-white rounded-lg shadow-md mb-8">
+            <h2 className="text-2xl font-semibold mb-6 text-center text-gray-800">Lista de Productos</h2>
+            <Table>
+                <TableHeader>
+                    <TableRow>
+                        <TableHead>ID</TableHead>
+                        <TableHead>Nombre</TableHead>
+                        <TableHead>Precio</TableHead>
+                        <TableHead>Tipo Producto ID</TableHead>
+                        <TableHead>Acciones</TableHead>
+                    </TableRow>
+                </TableHeader>
+                <TableBody>
                     {products.map((product) => (
-                        <tr key={product.id}>
-                            <td>{product.id}</td>
+                        <TableRow key={product.id}>
+                            <TableCell>{product.id}</TableCell>
                             {editingProduct === product.id ? (
                                 <>
-                                    <td><input type="text" name="nombre" value={formData.nombre} onChange={handleChange} /></td>
-                                    <td><input type="number" name="precio" value={formData.precio} onChange={handleChange} /></td>
-                                    <td><input type="number" name="idTipoProducto" value={formData.idTipoProducto} onChange={handleChange} /></td>
-                                    <td>
-                                        <button onClick={handleSubmitEdit}>Guardar</button>
-                                        <button onClick={() => setEditingProduct(null)}>Cancelar</button>
-                                    </td>
+                                    <TableCell><Input type="text" name="nombre" value={formData.nombre} onChange={handleChange} /></TableCell>
+                                    <TableCell><Input type="number" name="precio" value={formData.precio} onChange={handleChange} /></TableCell>
+                                    <TableCell><Input type="number" name="idTipoProducto" value={formData.idTipoProducto} onChange={handleChange} /></TableCell>
+                                    <TableCell>
+                                        <Button variant="outline" onClick={handleSubmitEdit}>Guardar</Button>
+                                        <Button variant="outline" onClick={() => setEditingProduct(null)}>Cancelar</Button>
+                                    </TableCell>
                                 </>
                             ) : (
                                 <>
-                                    <td>{product.nombre}</td>
-                                    <td>{product.precio}</td>
-                                    <td>{product.idTipoProducto}</td>
-                                    <td>
-                                        <button onClick={() => handleEdit(product)}>Editar</button>
-                                        <button onClick={() => handleDelete(product.id)}>Eliminar</button>
-                                    </td>
+                                    <TableCell>{product.nombre}</TableCell>
+                                    <TableCell>{product.precio}</TableCell>
+                                    <TableCell>{product.idTipoProducto}</TableCell>
+                                    <TableCell>
+                                            <Button variant="outline" onClick={() => handleEdit(product)}>Editar</Button>
+                                            <Button variant="outline" onClick={() => handleDelete(product.id)}>Eliminar</Button>
+                                    </TableCell>
                                 </>
                             )}
-                        </tr>
+                        </TableRow>
                     ))}
-                </tbody>
-            </table>
+                </TableBody>
+            </Table>
         </div>
     );
 };

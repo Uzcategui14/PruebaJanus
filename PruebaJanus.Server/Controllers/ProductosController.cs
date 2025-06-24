@@ -104,10 +104,6 @@ namespace Prueba.Server.Controllers
             return NoContent(); // Retorna un 204 No Content para indicar que la eliminación fue exitosa
         }
 
-        // Plan en pseudocódigo:
-        // 1. Envolver la consulta a la vista en un bloque try-catch para capturar excepciones y retornar un error 500 controlado.
-        // 2. Si ocurre una excepción, registrar el error (opcional) y retornar StatusCode(500, mensaje).
-        // 3. Si no hay error, retornar la lista como antes.
 
         [HttpGet("Stock")]
         public async Task<ActionResult<IEnumerable<StockProductoView>>> GetStockProductosView()
