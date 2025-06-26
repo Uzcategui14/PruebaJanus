@@ -287,7 +287,7 @@ npm install -g shadcn-ui@latest
 
 Inicializar Shadcn UI: 
 Navega a la raíz de tu proyecto frontend y ejecuta:
-shadcn-ui init
+npx shadcn@latest init
 
 Cuando te pregunte "Would you like to use TypeScript?", responde Yes (si tu proyecto usa .tsx). 
 Si tu proyecto usa .jsx, asegúrate de tener un tsconfig.json y renombra tus archivos a .jsx si aún son .js.
