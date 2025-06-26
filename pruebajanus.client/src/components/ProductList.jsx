@@ -137,6 +137,7 @@ const ProductList = () => {
                 } else {
                     fetchProducts();
                 }
+                window.location.reload();
             } catch (err) {
                 console.error("Error deleting product:", err);
                 alert(`Error al eliminar el producto: ${err.message}`);
@@ -236,6 +237,7 @@ const ProductList = () => {
             setEditingProduct(null); // Sale del modo edición
             setValidationErrors({}); // Limpia los errores después de un envío exitoso
             fetchProducts(); // Refresca la lista
+            window.location.reload();
         } catch (err) {
             console.error("Error updating product:", err);
             // Solo muestra el alert si el error no fue un 400 ya manejado
