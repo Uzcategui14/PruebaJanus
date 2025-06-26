@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Prueba.Server.Models;
 
 namespace Prueba.Server.Contexts
@@ -23,7 +23,7 @@ namespace Prueba.Server.Contexts
                 .Property(p => p.Precio)
                 .HasColumnType("decimal(18,2)");
 
-            // Configuración para la vista (si la usas como DbSet)
+            // Configuración para la vista
             modelBuilder.Entity<StockProductoView>().HasNoKey().ToView("vw_StockProducto");
         }
 

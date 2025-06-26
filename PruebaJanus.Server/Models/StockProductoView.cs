@@ -1,4 +1,4 @@
-﻿namespace Prueba.Server.Models
+namespace Prueba.Server.Models
 {
     public class StockProductoView
     {

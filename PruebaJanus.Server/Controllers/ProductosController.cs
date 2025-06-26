@@ -1,17 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Prueba.Server.Contexts;
 using Prueba.Server.Models;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Prueba.Server.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class ProductosController : ControllerBase
     {
         private readonly TestDbContext _context;
@@ -23,9 +20,52 @@ namespace Prueba.Server.Controllers
 
         // GET: api/<ProductosController>
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Producto>>> GetProductos()
+        public async Task<ActionResult<IEnumerable<Producto>>> GetProductos(
+            [FromQuery] int pageNumber = 1,
+            [FromQuery] int pageSize = 10,
+            [FromQuery] string orderBy = "Id", // Parámetro para la columna de ordenación (por defecto "Id")
+            [FromQuery] string orderDirection = "asc") // Parámetro para la dirección (por defecto "asc" ascendente)
         {
-            return await _context.Producto.ToListAsync();
+            if (pageNumber < 1) pageNumber = 1;
+            if (pageSize < 1 || pageSize > 100) pageSize = 10;
+
+            // Iniciar la consulta
+            IQueryable<Producto> query = _context.Producto;
+
+            // --- LÓGICA DE ORDENACIÓN ---
+            switch (orderBy?.ToLower()) // Usamos ?.ToLower() para manejar nulls y ser insensible a mayúsculas/minúsculas
+            {
+                case "nombre":
+                    query = (orderDirection?.ToLower() == "desc") ? query.OrderByDescending(p => p.Nombre) : query.OrderBy(p => p.Nombre);
+                    break;
+                case "precio":
+                    query = (orderDirection?.ToLower() == "desc") ? query.OrderByDescending(p => p.Precio) : query.OrderBy(p => p.Precio);
+                    break;
+                case "idtipoproducto":
+                    query = (orderDirection?.ToLower() == "desc") ? query.OrderByDescending(p => p.IdTipoProducto) : query.OrderBy(p => p.IdTipoProducto);
+                    break;
+                case "id": // Ordenación por defecto
+                default:
+                    query = (orderDirection?.ToLower() == "desc") ? query.OrderByDescending(p => p.Id) : query.OrderBy(p => p.Id);
+                    break;
+            }
+            // --- FIN LÓGICA DE ORDENACIÓN ---
+
+            // Contar el total de registros (después de cualquier filtro, pero antes de paginar)
+            var totalCount = await query.CountAsync();
+
+            // Aplicar paginación: saltar los registros de páginas anteriores y tomar solo los de la página actual
+            var productos = await query
+                                    .Skip((pageNumber - 1) * pageSize)
+                                    .Take(pageSize)
+                                    .ToListAsync();
+
+            // Añadir encabezados de respuesta
+            Response.Headers.Append("X-Total-Count", totalCount.ToString());
+            Response.Headers.Append("X-Page-Number", pageNumber.ToString());
+            Response.Headers.Append("X-Page-Size", pageSize.ToString());
+
+            return Ok(productos);
         }
 
         // GET api/<ProductosController>/5
@@ -66,6 +106,7 @@ namespace Prueba.Server.Controllers
 
             try
             {
+
                 await _context.SaveChangesAsync(); // Fixed CS4032 by marking the method async
             }
             catch (DbUpdateConcurrencyException)
@@ -106,26 +147,52 @@ namespace Prueba.Server.Controllers
 
 
         [HttpGet("Stock")]
-        public async Task<ActionResult<IEnumerable<StockProductoView>>> GetStockProductosView()
+        public async Task<ActionResult<IEnumerable<StockProductoView>>> GetStockProductosView(
+            [FromQuery] int pageNumber = 1,
+            [FromQuery] int pageSize = 10,
+            [FromQuery] string orderBy = "ProductoId",
+            [FromQuery] string orderDirection = "asc")
         {
-            try
-            {
-                var stockProductos = await _context.StockProductos
-                    .Where(sp => sp.ProductoId != null && sp.Nombre != null && sp.TipoProducto != null)
-                    .ToListAsync();
+            if (pageNumber < 1) pageNumber = 1;
+            if (pageSize < 1 || pageSize > 100) pageSize = 10;
 
-                // Filtrar manualmente si alguna propiedad crítica es null
-                var stockProductosFiltrados = stockProductos
-                    .Where(sp => sp.ProductoId != 0 && !string.IsNullOrEmpty(sp.Nombre) && !string.IsNullOrEmpty(sp.TipoProducto))
-                    .ToList();
+            // ¡Ahora consultamos directamente la vista!
+            IQueryable<StockProductoView> query = _context.StockProductos; // <-- ¡Aquí está el cambio clave!
 
-                return stockProductosFiltrados;
-            }
-            catch (Exception ex)
+            // --- LÓGICA DE ORDENACIÓN ---
+            switch (orderBy?.ToLower())
             {
-                // Opcional: registrar el error con un logger
-                return StatusCode(500, $"Error interno del servidor: {ex.Message}");
+                case "nombre":
+                    query = (orderDirection?.ToLower() == "desc") ? query.OrderByDescending(p => p.Nombre) : query.OrderBy(p => p.Nombre);
+                    break;
+                case "precio":
+                    query = (orderDirection?.ToLower() == "desc") ? query.OrderByDescending(p => p.Precio) : query.OrderBy(p => p.Precio);
+                    break;
+                case "tipoproducto":
+                    query = (orderDirection?.ToLower() == "desc") ? query.OrderByDescending(p => p.TipoProducto) : query.OrderBy(p => p.TipoProducto);
+                    break;
+                case "cantidad":
+                    query = (orderDirection?.ToLower() == "desc") ? query.OrderByDescending(p => p.Cantidad) : query.OrderBy(p => p.Cantidad);
+                    break;
+                case "productoid": // Ordenación por defecto
+                default:
+                    query = (orderDirection?.ToLower() == "desc") ? query.OrderByDescending(p => p.ProductoId) : query.OrderBy(p => p.ProductoId);
+                    break;
             }
+            // --- FIN LÓGICA DE ORDENACIÓN ---
+
+            var totalCount = await query.CountAsync();
+
+            var stock = await query
+                                    .Skip((pageNumber - 1) * pageSize)
+                                    .Take(pageSize)
+                                    .ToListAsync();
+
+            Response.Headers.Append("X-Total-Count", totalCount.ToString());
+            Response.Headers.Append("X-Page-Number", pageNumber.ToString());
+            Response.Headers.Append("X-Page-Size", pageSize.ToString());
+
+            return Ok(stock);
         }
     }
 }

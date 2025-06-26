@@ -18,10 +18,13 @@ function App() {
 
     return (
         <div className="App p-8 bg-gray-50"> {/* A�ade algunas clases de Tailwind aqu� */}
-            <h1 className="text-4xl font-extrabold text-blue-700 mb-6 text-center">Gestión de Productos Full Stack</h1>
-                <ProductForm onProductAdded={handleProductAdded} />
-                <ProductList />
-                <StockView />
+            <h1 className="text-5xl font-extrabold text-green-800 tracking-tight leading-tight mb-10 text-center md:text-6xl lg:text-7xl">Gestión de Productos Full Stack</h1>
+            <hr className="my-8 border-t-2 border-gray-200" />
+            <ProductForm onProductAdded={handleProductAdded} />
+            <hr className="my-8 border-t-2 border-gray-200" />
+            <ProductList />
+            <hr className="my-8 border-t-2 border-gray-200" />
+            <StockView />
         </div>
     );
 }

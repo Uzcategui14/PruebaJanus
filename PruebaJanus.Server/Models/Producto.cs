@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Prueba.Server.Models
@@ -13,7 +13,7 @@ namespace Prueba.Server.Models
 
         [Required(ErrorMessage = "El nombre del producto es obligatorio.")]
         [StringLength(100, ErrorMessage = "El nombre no puede exceder los 100 caracteres.")]
-        public string Nombre { get; set; }
+        public string? Nombre { get; set; }
 
         [Required(ErrorMessage = "El precio del producto es obligatorio.")]
         [Range(0.01, 9999999999999999.99, ErrorMessage = "El precio debe ser un valor positivo.")] // Precio mayor que 0

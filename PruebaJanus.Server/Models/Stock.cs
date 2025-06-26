@@ -1,5 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations; // Necesario para Data Annotations
+using System.ComponentModel.DataAnnotations.Schema; // Necesario para [Column
 namespace Prueba.Server.Models
 {
     public class Stock
@@ -11,7 +13,7 @@ namespace Prueba.Server.Models
         public int IdProducto { get; set; }
 
         [Required(ErrorMessage = "La cantidad de stock es obligatoria.")]
-        [Range(0, int.MaxValue, ErrorMessage = "La cantidad de stock no puede ser negativa.")] // Permitir 0 o más
+        [Range(0, int.MaxValue, ErrorMessage = "La cantidad de stock no puede ser negativa.")]
         public int Cantidad { get; set; }
     }
 }

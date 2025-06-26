@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PruebaJanus.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3ac5f99302a689f1c2098fe8bf9ac60b96189d28")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9d947dc3d93ea0c808199dd1ca3f66bb82aa1a48")]
 [assembly: System.Reflection.AssemblyProductAttribute("PruebaJanus.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PruebaJanus.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
